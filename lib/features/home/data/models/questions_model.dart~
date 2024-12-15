@@ -1,0 +1,67 @@
+import 'package:audioplayers/audioplayers.dart';
+import 'package:kids_app/generated/assets.dart';
+
+class QuestionsModel {
+  final String image;
+  final String sound;
+  final List<Option> options;
+  bool isLocked;
+  Option? selectedOption;
+
+  QuestionsModel(
+      {required this.image,
+        required this.sound,
+      required this.options,
+      this.isLocked = false,
+      this.selectedOption});
+
+  PlaySound() {
+    final player = AudioPlayer();
+    player.play(AssetSource(sound));
+  }
+}
+
+class Option {
+  final String text;
+  final bool isCorrect;
+
+  Option({required this.text, required this.isCorrect});
+}
+final questionsList = [
+  QuestionsModel(
+    image: Assets.categoriesCategory6,
+    sound: Assets.soundsILoveAnime,
+    options: [
+      Option(text: 'اختيار اول', isCorrect: false),
+      Option(text: 'اختيار ثاني', isCorrect: true),
+      Option(text: 'اختيار ثالث', isCorrect: false),
+      Option(text: 'اختيار رابع', isCorrect: false),
+    ],
+  ),
+  QuestionsModel(
+    image: Assets.categoriesCategory5,
+    sound: Assets.soundsILoveAnime,
+    options: [
+      Option(text: 'اختيار اول', isCorrect: false),
+      Option(text: 'اختيار ثاني', isCorrect: true),
+      Option(text: 'اختيار ثالث', isCorrect: false),
+      Option(text: 'اختيار رابع', isCorrect: false),
+    ],
+  ),
+  QuestionsModel(
+    image: Assets.categoriesCategory7,
+    sound: Assets.soundsILoveAnime,
+    options: [
+      Option(text: 'اختيار اول', isCorrect: false),
+      Option(text: 'اختيار ثاني', isCorrect: true),
+      Option(text: 'اختيار ثالث', isCorrect: false),
+      Option(text: 'اختيار رابع', isCorrect: false),
+    ],
+  ),
+
+];
+ List<List<QuestionsModel>> sessionsQuestions = [
+  questionsList, // الجلسة الأولى
+  questionsList, // الجلسة الثانية (يمكن تغييرها)
+  questionsList, // الجلسة الثالثة
+];
