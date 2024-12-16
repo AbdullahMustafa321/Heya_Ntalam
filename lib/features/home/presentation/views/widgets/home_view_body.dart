@@ -42,7 +42,8 @@ class HomeViewBody extends StatelessWidget {
                       child: CategoryCard(categoryModel: sessions[index]));
                 },
               ),
-            )
+            ),
+            SizedBox(height: 10.h,)
           ],
         ),
       ),

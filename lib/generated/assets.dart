@@ -118,7 +118,6 @@ class Assets {
   static const String jungleAnimals130 = 'assets/images/Jungle_animals/130.jpg';
   static const String lottieHappyBoy = 'assets/images/Lottie/happy_boy.json';
   static const String lottieHiLottie = 'assets/images/Lottie/hi_lottie.json';
-  static const String lottieMouthLottie = 'assets/images/Lottie/mouth_lottie.json';
   static const String lottiePass2Lottie = 'assets/images/Lottie/pass2_lottie.json';
   static const String lottiePassLottie = 'assets/images/Lottie/pass_lottie.json';
   static const String lottieRightLottie = 'assets/images/Lottie/right_lottie.json';
