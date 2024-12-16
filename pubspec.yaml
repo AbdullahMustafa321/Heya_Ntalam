@@ -20,9 +20,13 @@ dependencies:
   audioplayers: ^6.1.0
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.2
   flutter_test:
     sdk: flutter
-
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.jpeg"
   flutter_lints: ^3.0.0
 
 

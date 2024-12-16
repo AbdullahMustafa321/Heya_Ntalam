@@ -42,8 +42,13 @@ class SessionsListViewBody extends StatelessWidget {
                 childAspectRatio: 1.6.w
             ),
               itemBuilder: (context, index) {
-                return SessionCard(
-                    text: categoryModel.sessions[index].title);
+                return GestureDetector(
+                  onTap: (){
+                    categoryModel.sessions[index].sessionDetails[index].playSound();
+                  },
+                  child: SessionCard(
+                      text: categoryModel.sessions[index].title),
+                );
               },
             ),
           )
