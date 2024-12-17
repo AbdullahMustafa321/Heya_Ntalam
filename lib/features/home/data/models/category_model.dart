@@ -111,7 +111,7 @@ final List<CategoryModel> sessions = [
         title: 'الجلسة الثانية',
         sessionDetails: [
           SessionDetails(
-            title: 'سكين',
+            title: 'سكينة',
             image: Assets.tableware4,
             sound: Assets.sounds4,
           ),
@@ -507,7 +507,7 @@ final List<CategoryModel> sessions = [
         title: 'الجلسة الاولي',
         sessionDetails: [
           SessionDetails(
-            title: 'بوق',
+            title: 'بوء',
             image: Assets.bodyParts31,
             sound: Assets.sounds31,
           ),
@@ -1540,7 +1540,7 @@ final List<CategoryModel> sessions = [
             sound: Assets.sounds102,
           ),
           SessionDetails(
-            title: 'سوربر ماركت',
+            title: 'سوبر ماركت',
             image: Assets.places103,
             sound: Assets.sounds103,
           ),
@@ -1767,7 +1767,7 @@ final List<CategoryModel> sessions = [
             sound: Assets.sounds117,
           ),
           SessionDetails(
-            title: 'ببفاء',
+            title: 'ببغاء',
             image: Assets.birds118,
             sound: Assets.sounds118,
           ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:heya_ntalam/core/constant/colors.dart';
 import 'package:heya_ntalam/core/widgets/custom_button.dart';
+import 'package:heya_ntalam/features/home/presentation/views/quiz_view.dart';
 import 'package:heya_ntalam/features/home/presentation/views/widgets/session_image_widget.dart';
 import 'package:heya_ntalam/features/home/presentation/views/widgets/session_sound_icon_widget.dart';
 import 'package:heya_ntalam/features/home/presentation/views/widgets/session_text_widget.dart';
@@ -50,15 +50,16 @@ class _SessionViewBodyState extends State<SessionViewBody> {
                   });
                 },
                 itemBuilder: (context, index) {
+                  final sessionDetails = widget.session.sessionDetails;
                   return Column(
                     children: [
                       SessionImageWidget(
-                          image: widget.session.sessionDetails[index].image),
+                          image: sessionDetails[index].image, height: 280.h, width: 300.w,),
                       SizedBox(height: 20.h),
                       SessionSoundIconWidget(
-                          sound: widget.session.sessionDetails[index].sound),
+                          sound:sessionDetails[index].sound),
                       SizedBox(height: 20.h),
-                      SessionTextWidget(text: widget.session.sessionDetails[index].title),
+                      SessionTextWidget(text: sessionDetails[index].title),
                     ],
                   );
                 },
@@ -89,7 +90,9 @@ class _SessionViewBodyState extends State<SessionViewBody> {
                   )
                 else
                   CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => QuizView(session: widget.session,),));
+                    },
                     isIconRight: true,
                     text: 'اختبار',
                     icon: Icons.quiz_outlined,
