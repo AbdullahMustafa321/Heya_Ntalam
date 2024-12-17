@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heya_ntalam/core/constant/colors.dart';
 
 class CustomBackButton extends StatelessWidget {
   const CustomBackButton({
@@ -16,7 +17,7 @@ class CustomBackButton extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.arrow_forward_ios_outlined),
+          icon: Icon(Icons.arrow_forward_ios_outlined,color: Colors.black,),
         ),
       ],
     );

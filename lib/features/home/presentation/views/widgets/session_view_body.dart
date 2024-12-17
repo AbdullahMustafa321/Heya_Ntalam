@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:heya_ntalam/core/constant/colors.dart';
 import 'package:heya_ntalam/core/widgets/custom_button.dart';
+import 'package:heya_ntalam/features/home/presentation/views/widgets/session_image_widget.dart';
+import 'package:heya_ntalam/features/home/presentation/views/widgets/session_sound_icon_widget.dart';
+import 'package:heya_ntalam/features/home/presentation/views/widgets/session_text_widget.dart';
 
 import '../../../../../core/widgets/custom_back_button.dart';
 import '../../../data/models/category_model.dart';
@@ -20,6 +23,12 @@ class _SessionViewBodyState extends State<SessionViewBody> {
   int _currentPage = 0;
 
   @override
+  void initState() {
+    super.initState();
+    widget.session.sessionDetails[_currentPage].playSound();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
@@ -27,7 +36,7 @@ class _SessionViewBodyState extends State<SessionViewBody> {
         child: Column(
           children: [
             Padding(
-              padding:  EdgeInsets.only(bottom: 8.h),
+              padding: EdgeInsets.only(bottom: 8.h),
               child: CustomBackButton(),
             ),
             Expanded(
@@ -37,29 +46,19 @@ class _SessionViewBodyState extends State<SessionViewBody> {
                 onPageChanged: (index) {
                   setState(() {
                     _currentPage = index;
+                    widget.session.sessionDetails[index].playSound();
                   });
                 },
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Container(
-                        padding: EdgeInsets.all(5.r),
-                        height: 280.h,
-                        width: 300.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.r),
-                          border: Border.all(color: Colors.grey),
-                        ),
-                        child: Image.asset(
-                          widget.session.sessionDetails[index].image,
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      SizedBox(height: 20.h,),
-                      IconButton(onPressed: (){widget.session.sessionDetails[index].playSound();}, icon: Icon(Icons.multitrack_audio,size: 50.sp,)),
-                      SizedBox(height: 20.h,),
-                      Text(widget.session.sessionDetails[index].title,style: TextStyle(fontSize: 60.sp,fontWeight: FontWeight.bold),),
-
+                      SessionImageWidget(
+                          image: widget.session.sessionDetails[index].image),
+                      SizedBox(height: 20.h),
+                      SessionSoundIconWidget(
+                          sound: widget.session.sessionDetails[index].sound),
+                      SizedBox(height: 20.h),
+                      SessionTextWidget(text: widget.session.sessionDetails[index].title),
                     ],
                   );
                 },
@@ -68,25 +67,38 @@ class _SessionViewBodyState extends State<SessionViewBody> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                CustomButton(
+                if (_currentPage > 0)
+                  CustomButton(
                     onPressed: () {
                       _goToPreviousPage();
                     },
                     isIconRight: false,
                     text: 'السابق',
-                    icon: Icons.arrow_back_ios_new),
-                CustomButton(
+                    icon: Icons.arrow_back_ios_new,
+                  )
+                else
+                  SizedBox(width: 120.w),
+                if (_currentPage < widget.session.sessionDetails.length - 1)
+                  CustomButton(
                     onPressed: () {
                       _goToNextPage();
                     },
                     isIconRight: true,
                     text: 'التالي',
-                    icon: Icons.arrow_forward_ios_outlined),
+                    icon: Icons.arrow_forward_ios_outlined,
+                  )
+                else
+                  CustomButton(
+                    onPressed: () {},
+                    isIconRight: true,
+                    text: 'اختبار',
+                    icon: Icons.quiz_outlined,
+                  ),
               ],
             ),
             SizedBox(
               height: 30.h,
-            )
+            ),
           ],
         ),
       ),
