@@ -13,12 +13,12 @@ class SessionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Stack(
       clipBehavior: Clip.none,
       children: [
         Container(
-          width: 160.w,
-          height: 65.h,
           decoration: BoxDecoration(
             color: kMainColor.withOpacity(0.5),
             borderRadius: BorderRadius.circular(10.r),
@@ -32,13 +32,13 @@ class SessionCard extends StatelessWidget {
             ],
           ),
           child: Align(
-            alignment: Alignment.bottomLeft,
+            alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.only(bottom: 8.h, left: 8.w),
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
               child: Text(
                 text,
                 style: TextStyle(
-                  fontSize: 18.sp,
+                  fontSize: screenWidth * 0.05,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),

@@ -30,6 +30,8 @@ class _SessionViewBodyState extends State<SessionViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.h),
@@ -54,11 +56,11 @@ class _SessionViewBodyState extends State<SessionViewBody> {
                   return Column(
                     children: [
                       SessionImageWidget(
-                          image: sessionDetails[index].image, height: 280.h, width: 300.w,),
-                      SizedBox(height: 20.h),
+                          image: sessionDetails[index].image, height: screenHeight*0.4, width: screenWidth*0.9,),
+                      SizedBox(height: screenHeight*0.08),
                       SessionSoundIconWidget(
                           sound:sessionDetails[index].sound),
-                      SizedBox(height: 20.h),
+                      SizedBox(height: screenHeight*0.04),
                       SessionTextWidget(text: sessionDetails[index].title),
                     ],
                   );

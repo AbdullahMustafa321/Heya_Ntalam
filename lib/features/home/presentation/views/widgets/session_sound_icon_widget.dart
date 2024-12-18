@@ -13,6 +13,7 @@ class SessionSoundIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return IconButton(
       onPressed: () {
           final player = AudioPlayer();
@@ -20,7 +21,7 @@ class SessionSoundIconWidget extends StatelessWidget {
       },
       icon: Icon(
         Icons.volume_up_outlined,
-        size: 50.sp,
+        size: screenWidth * 0.15,
         color: Colors.black,
       ),
     );

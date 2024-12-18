@@ -53,6 +53,8 @@ class _QuizViewBodyState extends State<QuizViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Stack(
         alignment: Alignment.center,
@@ -65,9 +67,9 @@ class _QuizViewBodyState extends State<QuizViewBody> {
               ),
               Text(
                 'أختر الصورة الصحيحة',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.sp),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: screenWidth * 0.09),
               ),
-              SizedBox(height: 20.h),
+              SizedBox(height: screenHeight * 0.01),
               Expanded(
                 child: PageView.builder(
                   controller: _pageController,
@@ -93,8 +95,8 @@ class _QuizViewBodyState extends State<QuizViewBody> {
                             children: [
                               SessionImageWidget(
                                 image: options[0].image,
-                                height: 170.h,
-                                width: 200.w,
+                                height: screenHeight * 0.25,
+                                width: screenWidth * 0.55,
                               ),
                               if (_tappedOptionIndex == 0 &&
                                   _feedbackImage != null)
@@ -114,8 +116,8 @@ class _QuizViewBodyState extends State<QuizViewBody> {
                             children: [
                               SessionImageWidget(
                                 image: options[1].image,
-                                height: 170.h,
-                                width: 200.w,
+                                height: screenHeight * 0.25,
+                                width: screenWidth * 0.55,
                               ),
                               if (_tappedOptionIndex == 1 &&
                                   _feedbackImage != null)
@@ -127,7 +129,7 @@ class _QuizViewBodyState extends State<QuizViewBody> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 30.h),
+                        SizedBox(height: screenHeight*0.05),
                         SessionSoundIconWidget(sound: question.sound),
                       ],
                     );

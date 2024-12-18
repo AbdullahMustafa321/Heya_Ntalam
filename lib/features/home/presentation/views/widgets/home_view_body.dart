@@ -15,6 +15,8 @@ class HomeViewBody extends StatelessWidget {
    HomeViewBody({super.key});
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 8.w),
@@ -22,7 +24,7 @@ class HomeViewBody extends StatelessWidget {
           children: [
             Lottie.asset(Assets.lottieHiLottie),
             SizedBox(
-              height: 10.h,
+              height: screenHeight * 0.01,
             ),
             Expanded(
               child: GridView.builder(
@@ -43,7 +45,7 @@ class HomeViewBody extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 10.h,)
+            SizedBox(height: screenHeight*0.01,)
           ],
         ),
       ),

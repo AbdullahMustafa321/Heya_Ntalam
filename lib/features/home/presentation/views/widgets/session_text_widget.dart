@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/constant/colors.dart';
 
@@ -14,10 +13,11 @@ class SessionTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Text(
       text,
       style: TextStyle(
-        fontSize: 60.sp,
+        fontSize: screenWidth * 0.17,
         fontWeight: FontWeight.bold,
         color: kMainColor,
         shadows: [
