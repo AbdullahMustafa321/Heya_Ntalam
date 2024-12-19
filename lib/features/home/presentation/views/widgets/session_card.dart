@@ -48,7 +48,7 @@ class SessionCard extends StatelessWidget {
         ),
         Positioned(
           bottom: 20.h,
-          left: 90.w,
+          left: 100.w,
           child: Image.asset(
             Assets.imagesSetionImage,
             width: 100.w,

@@ -12,7 +12,6 @@ class CategoryCard extends StatelessWidget {
 final CategoryModel categoryModel;
   @override
   Widget build(BuildContext context) {
-
     return Container(
       decoration: BoxDecoration(
           color: kMainColor.withOpacity(0.5),

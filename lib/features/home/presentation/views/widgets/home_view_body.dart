@@ -33,7 +33,7 @@ class HomeViewBody extends StatelessWidget {
                   crossAxisCount: 2,
                   crossAxisSpacing: 10.w,
                   mainAxisSpacing: 10.h,
-                  childAspectRatio: 1.6.w
+                  childAspectRatio: 1.1.w
                 ),
                 itemBuilder: (context,index){
                   return GestureDetector(

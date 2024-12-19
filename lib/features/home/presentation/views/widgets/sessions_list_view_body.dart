@@ -31,7 +31,7 @@ class SessionsListViewBody extends StatelessWidget {
                       crossAxisCount: 2,
                       crossAxisSpacing: 10.w,
                       mainAxisSpacing: 5.h,
-                      childAspectRatio: 1.6.w
+                      childAspectRatio: 1.5.w
                   ),
                   itemBuilder: (context, index) {
                     return GestureDetector(

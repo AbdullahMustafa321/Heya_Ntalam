@@ -86,7 +86,7 @@ class _QuizViewBodyState extends State<QuizViewBody> {
                     final question = widget.session.questions[index];
                     final options = question.options;
 
-                    return Column(
+                    return ListView(
                       children: [
                         GestureDetector(
                           onTap: () => _checkAnswer(options[0].isCorrect, 0),

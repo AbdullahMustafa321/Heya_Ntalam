@@ -53,7 +53,7 @@ class _SessionViewBodyState extends State<SessionViewBody> {
                 },
                 itemBuilder: (context, index) {
                   final sessionDetails = widget.session.sessionDetails;
-                  return Column(
+                  return ListView(
                     children: [
                       SessionImageWidget(
                           image: sessionDetails[index].image, height: screenHeight*0.4, width: screenWidth*0.9,),
@@ -61,7 +61,7 @@ class _SessionViewBodyState extends State<SessionViewBody> {
                       SessionSoundIconWidget(
                           sound:sessionDetails[index].sound),
                       SizedBox(height: screenHeight*0.04),
-                      SessionTextWidget(text: sessionDetails[index].title),
+                      Center(child: SessionTextWidget(text: sessionDetails[index].title)),
                     ],
                   );
                 },

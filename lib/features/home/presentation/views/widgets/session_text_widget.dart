@@ -17,7 +17,7 @@ class SessionTextWidget extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontSize: screenWidth * 0.17,
+        fontSize: screenWidth * 0.11,
         fontWeight: FontWeight.bold,
         color: kMainColor,
         shadows: [
